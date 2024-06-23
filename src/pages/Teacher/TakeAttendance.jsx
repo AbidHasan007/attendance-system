@@ -57,7 +57,7 @@ console.log(filteredStudent)
             roll: student.roll,
             course_taken: student.course_taken.name,
             status: attendanceData[student._id] || 'absent',
-            date: date.toLocaleDateString()
+            date: date.toLocaleDateString('en-CA')
         }));
   console.log(attendanceRecords)
         try {

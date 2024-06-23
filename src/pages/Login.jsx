@@ -5,6 +5,7 @@ import useAuth from '../hooks/useAuth';
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import { useState } from 'react';
+import logo from '../assets/logo.png'
 const Login = () => {
   const navigate = useNavigate() 
   const {signInWithGoogle,signIn,resetPassword, loading, setLoading} = useAuth()
@@ -57,12 +58,10 @@ const handleForgot = async (e)=>{
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
-        <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Log In</h1>
-          <p className='text-sm text-gray-400'>
-            Sign in to access your account
-          </p>
-        </div>
+         <div className='mx-auto text-center'>
+           <img src={logo} alt="" className='h-20 w-20' />
+          <p className='text-sm text-gray-400'>Sign In to AMS</p>
+         </div>
         <form
          onSubmit={handleSubmit}
           className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -78,7 +77,7 @@ const handleForgot = async (e)=>{
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ED8322] bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -95,7 +94,7 @@ const handleForgot = async (e)=>{
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#ED8322] bg-gray-200 text-gray-900'
               />
             </div>
           </div>
@@ -104,7 +103,7 @@ const handleForgot = async (e)=>{
             <button
              disabled={loading}
               type='submit'
-              className='bg-rose-500 w-full rounded-md py-3 text-white'
+              className='bg-[#ED8322] w-full rounded-md py-3 text-white'
             >
                {
               loading ? "Please wait" : "Sign In"
